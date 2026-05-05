@@ -306,7 +306,10 @@ input.err,select.err{border-color:var(--red)!important;}
     </div>
     <div class="covs"><div class="covt">ความคุ้มครอง</div><div class="covl" id="covL"></div></div>
     <div class="cta">
-      <button class="cbtn cb-ci" id="ctaL" onclick="window.open('https://lin.ee/Wb0k43i','_blank')">💬 สนใจ — ส่งข้อความหาเอเจนต์</button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+        <button class="cbtn cb-ci" id="ctaL" onclick="window.open('https://lin.ee/Wb0k43i','_blank')">💬 สนใจ</button>
+        <button class="cbtn" id="ctaShare" onclick="shareToLine()" style="background:linear-gradient(135deg,#06C755,#04a344);color:white;border:none;">📤 แชร์เบี้ย</button>
+      </div>
       <button class="cbtn cb-out-ci" id="ctaA" onclick="openAppt()">📅 นัดหมายปรึกษาฟรี</button>
       <button class="cbtn cb-sec" onclick="showQR()">📱 QR Code ติดต่อ</button>
     </div>
@@ -529,6 +532,29 @@ function render(age,prem){
   setTimeout(()=>{document.getElementById('rSec').scrollIntoView({behavior:'smooth',block:'start'});},100);
 }
 
+function shareToLine(){
+  const plan=document.getElementById('rPlan').textContent;
+  const premEl=document.getElementById('rPrem');
+  const prem=premEl.childNodes[0].textContent.trim()+' บาท/ปี';
+  const sum=document.getElementById('rSum').textContent;
+  const rFor=document.getElementById('rFor').textContent;
+  const mo=document.getElementById('rMo').textContent;
+  const msg=
+    '🛡️ ผลเบี้ยประกัน FWD\n'
+    +'━━━━━━━━━━━━━━\n'
+    +'📋 แผน: '+plan+'\n'
+    +'👤 '+rFor+'\n'
+    +'💰 ทุน: '+sum+'\n'
+    +'📊 เบี้ยรายปี: '+prem+'\n'
+    +'📆 '+mo+'\n'
+    +'━━━━━━━━━━━━━━\n'
+    +'💬 สอบถามเพิ่มเติม ติดต่อเอเจนต์\n'
+    +'📱 Line: https://lin.ee/Wb0k43i\n'
+    +'🔖 Agent Code: 162165';
+  const url='https://line.me/R/msg/text/?'+encodeURIComponent(msg);
+  window.open(url,'_blank');
+}
+
 function showQR(){
   document.getElementById('qrEl').style.display='block';
   setTimeout(()=>{document.getElementById('qrEl').scrollIntoView({behavior:'smooth',block:'center'});},100);
@@ -559,13 +585,20 @@ async function subAppt(){
     line:document.getElementById('aLn').value.trim(),
     date:document.getElementById('aDt').value,
     time:document.getElementById('aTm').value,
-    plan:document.getElementById('aNt').value.split('\n')[0]||'',
+    plan:document.getElementById('aNt').value.split('\n')[0]||mode.toUpperCase(),
     note:document.getElementById('aNt').value.trim()
   };
   try{
-    const url='https://script.google.com/macros/s/AKfycbxYlR_58oncGvg778hRw5lFYHOmxEuThggLQrdEwqSaK_4Qk2jxCOm4hvyJjmNUl8Pj/exec?'
-      +Object.keys(payload).map(k=>k+'='+encodeURIComponent(payload[k])).join('&');
-    await fetch(url,{method:'GET',mode:'no-cors'});
+    const params=new URLSearchParams({
+      name:payload.name,
+      phone:payload.phone,
+      line:payload.line,
+      date:payload.date,
+      time:payload.time,
+      plan:payload.plan,
+      note:payload.note
+    });
+    await fetch('https://script.google.com/macros/s/AKfycbxYlR_58oncGvg778hRw5lFYHOmxEuThggLQrdEwqSaK_4Qk2jxCOm4hvyJjmNUl8Pj/exec?'+params.toString(),{method:'GET',mode:'no-cors'});
   }catch(err){console.warn('Sheet error',err);}
   btn.textContent='✅ ส่งคำขอนัดหมาย';btn.disabled=false;
   document.getElementById('mbd').style.display='none';
