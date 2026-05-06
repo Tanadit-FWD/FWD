@@ -158,17 +158,20 @@ function sendLine() {
   const contact = document.getElementById("contact").value || "-";
   const prem = premiums[document.getElementById("gender").value][plan][age];
 
-  // ===== ส่งเข้า Google Sheet: Leads Line For Duan Only =====
   const webhookUrl = "https://script.google.com/macros/s/AKfycbxdGcLE0w3NKtMs4UVe3739jp7ghnin43JMMoZfsHIK2brD3Xu06oE9mTzFl5UrwaxXtg/exec";
 
   const payload = {
     name: name,
+    phone: contact,
     contact: contact,
     gender: gender,
     age: age,
     plan: fmt(plan),
     premium: fmt(prem),
-    source: "Landing มรดก FWD"
+    time: "",
+    note: "",
+    source: "Landing มรดก FWD",
+    pageUrl: window.location.href
   };
 
   fetch(webhookUrl, {
@@ -177,21 +180,7 @@ function sendLine() {
     body: JSON.stringify(payload)
   })
   .then(() => {
-    const msg = `ขอเช็คเบี้ยแผนมรดก + CI 50
-
-ชื่อ: ${name}
-เพศ: ${gender}
-อายุ: ${age}
-แพ็กเกจ: ${fmt(plan)} บาท
-เบี้ยจากตาราง: ${fmt(prem)} บาท/ปี
-ติดต่อ: ${contact}`;
-
-    window.open(
-      `https://line.me/R/oaMessage/@748dwved/?${encodeURIComponent(msg)}`,
-      "_blank"
-    );
-
-    alert("ส่งข้อมูลเรียบร้อยแล้ว ✅");
+    alert("ส่งข้อมูลเรียบร้อยแล้ว ✅ เดี๋ยวเดือนติดต่อกลับค่ะ/ครับ");
   })
   .catch((err) => {
     console.error(err);
