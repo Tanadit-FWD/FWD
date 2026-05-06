@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FWD Heritage Plus | วางแผนมรดก ส่งต่อความมั่งคั่ง</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --orange: #ff6200;
+      --orange-soft: #fff0e7;
+      --dark: #10251f;
+      --green: #143c32;
+      --gold: #c9944a;
+      --cream: #fffaf3;
+      --white: #ffffff;
+      --muted: #6c756f;
+      --line: #06c755;
+      --shadow: 0 18px 45px rgba(16, 37, 31, 0.16);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Sarabun", sans-serif;
+      color: var(--dark);
+      background: linear-gradient(180deg, #fffaf3 0%, #ffffff 45%, #fff6ee 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--dark);
+      color: white;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: "Prompt", sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--orange);
+    }
+
+    .hero {
+      padding: 46px 0 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange-soft);
+      color: var(--orange);
+      border: 1px solid rgba(255, 98, 0, 0.18);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-family: "Prompt", sans-serif;
+      font-size: clamp(36px, 5vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--dark);
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: var(--orange);
+    }
+
+    .lead {
+      font-size: clamp(18px, 2vw, 23px);
+      color: #354941;
+      margin-bottom: 24px;
+      max-width: 720px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .point {
+      background: white;
+      border: 1px solid rgba(20, 60, 50, 0.08);
+      border-radius: 18px;
+      padding: 14px 15px;
+      box-shadow: 0 8px 24px rgba(16, 37, 31, 0.06);
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-family: "Prompt", sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      box-shadow: 0 12px 28px rgba(255, 98, 0, 0.32);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-line {
+      background: var(--line);
+      color: white;
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #143c32, #081b16);
+      color: white;
+      border-radius: 34px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255,98,0,0.34), transparent 65%);
+      top: -80px;
+      right: -70px;
+    }
+
+    .premium-box {
+      position: relative;
+      z-index: 2;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 24px;
+      padding: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    .premium-box h2 {
+      font-family: "Prompt", sans-serif;
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .premium-price {
+      margin: 18px 0;
+      padding: 18px;
+      background: white;
+      color: var(--dark);
+      border-radius: 20px;
+    }
+
+    .premium-price small {
+      color: var(--muted);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .premium-price strong {
+      display: block;
+      font-size: 32px;
+      font-family: "Prompt", sans-serif;
+      color: var(--orange);
+    }
+
+    .section {
+      padding: 58px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-title h2 {
+      font-family: "Prompt", sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(16, 37, 31, 0.08);
+      border: 1px solid rgba(20, 60, 50, 0.08);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      background: var(--orange-soft);
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-family: "Prompt", sans-serif;
+      font-size: 21px;
+      margin-bottom: 8px;
+      color: var(--green);
+    }
+
+    .card p {
+      color: #52625b;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #143c32, #0d211c);
+      color: white;
+      border-radius: 36px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .highlight h2 {
+      font-family: "Prompt", sans-serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      color: #ffb27c;
+      font-family: "Prompt", sans-serif;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .premium-table {
+      overflow-x: auto;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 12px 34px rgba(16, 37, 31, 0.08);
+      border: 1px solid rgba(20,60,50,0.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th {
+      background: var(--green);
+      color: white;
+      font-family: "Prompt", sans-serif;
+      padding: 14px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    td {
+      padding: 13px;
+      border-bottom: 1px solid #eef0ee;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) td {
+      background: #fffaf5;
+    }
+
+    .form-section {
+      padding: 64px 0;
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .advisor {
+      background: var(--dark);
+      color: white;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 18px;
+    }
+
+    .advisor h3 {
+      font-family: "Prompt", sans-serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #ffb27c;
+    }
+
+    .advisor-list {
+      margin: 20px 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .advisor-list div {
+      background: rgba(255,255,255,0.08);
+      padding: 12px 14px;
+      border-radius: 14px;
+    }
+
+    .lead-form {
+      background: white;
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(20,60,50,0.08);
+    }
+
+    .lead-form h2 {
+      font-family: "Prompt", sans-serif;
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .lead-form p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 800;
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #dfe6e2;
+      border-radius: 16px;
+      padding: 13px 14px;
+      font-family: "Sarabun", sans-serif;
+      font-size: 16px;
+      outline: none;
+      background: #fbfffd;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 4px rgba(255, 98, 0, 0.1);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 18px;
+      padding: 16px 22px;
+      font-size: 18px;
+    }
+
+    .status {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      display: none;
+      font-weight: 800;
+    }
+
+    .status.ok {
+      display: block;
+      color: #126b39;
+      background: #eafff1;
+      border: 1px solid #bdebcf;
+    }
+
+    .status.error {
+      display: block;
+      color: #9b1c1c;
+      background: #fff0f0;
+      border: 1px solid #ffd0d0;
+    }
+
+    .disclaimer {
+      font-size: 13px;
+      color: #6f7773;
+      background: #f7f7f7;
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 18px;
+    }
+
+    .floating {
+      position: fixed;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 50;
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .floating .btn {
+      padding: 13px 10px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .highlight-grid,
+      .form-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-points,
+      .stat-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .advisor {
+        position: static;
+      }
+
+      .floating {
+        display: grid;
+      }
+
+      .section {
+        padding: 44px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div><strong>FWD Heritage Plus</strong> วางแผนมรดก ส่งต่อความมั่งคั่ง</div>
+      <div>ติดต่อเดือน UM | โทร 061-878-6269</div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">🏛️ แผนประกันเพื่อวางแผนมรดก</div>
+          <h1>
+            เปลี่ยนวันนี้ให้เป็น<br>
+            <span>มรดกก้อนใหญ่</span><br>
+            เพื่อคนที่คุณรัก
+          </h1>
+          <p class="lead">
+            FWD Heritage Plus แบบประกันชีวิตที่ออกแบบมาเพื่อการส่งต่อความมั่งคั่ง
+            คุ้มครองชีวิตถึงอายุ 99 ปี พร้อมวางแผนทุนประกันหลัก 10–100 ล้านบาทขึ้นไป
+          </p>
+
+          <div class="hero-points">
+            <div class="point">✅ ทุนขั้นต่ำ 10 ล้านบาท</div>
+            <div class="point">✅ เลือกชำระเบี้ย 6 หรือ 12 ปี</div>
+            <div class="point">✅ คุ้มครองชีวิตถึงอายุ 99 ปี</div>
+            <div class="point">✅ เหมาะกับวางแผนมรดก</div>
+          </div>
+
+          <div class="cta-row">
+            <a href="#leadForm" class="btn btn-primary">ขอวางแผนมรดกฟรี</a>
+            <a href="tel:0618786269" class="btn btn-dark">โทรหาเดือน</a>
+            <a href="https://line.me/R/ti/p/@748dwved" class="btn btn-line">แอด LINE</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="premium-box">
+            <h2>ตัวอย่างแผนยอดนิยม</h2>
+            <p>หญิง อายุ 35 ปี | ทุนประกัน 20 ล้านบาท | แบบชำระ 12 ปี</p>
+
+            <div class="premium-price">
+              <small>เบี้ยประกันรายปีโดยประมาณ</small>
+              <strong>596,800 บาท/ปี</strong>
+              <span>คุ้มครองชีวิต 20,000,000 บาท</span>
+            </div>
+
+            <p>
+              เหมาะสำหรับผู้ที่ต้องการสร้างเงินก้อนให้ครอบครัว
+              จัดสรรมรดก หรือเพิ่มสภาพคล่องให้คนข้างหลัง
+            </p>
+
+            <div class="cta-row">
+              <a href="#leadForm" class="btn btn-primary">เช็กเบี้ยของฉัน</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Heritage Plus เหมาะกับใคร?</h2>
+          <p>ออกแบบสำหรับคนที่ต้องการส่งต่อทรัพย์สินอย่างมีแผน ไม่ปล่อยให้ครอบครัวรับภาระลำพัง</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">👨‍👩‍👧</div>
+            <h3>คนมีครอบครัว</h3>
+            <p>อยากมั่นใจว่าคนข้างหลังมีเงินก้อนทันที หากเกิดเหตุไม่คาดคิด</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🏢</div>
+            <h3>เจ้าของธุรกิจ</h3>
+            <p>ต้องการแยกเงินก้อนเพื่อครอบครัว ไม่ให้กระทบเงินหมุนเวียนธุรกิจ</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🏡</div>
+            <h3>คนมีทรัพย์สิน</h3>
+            <p>มีบ้าน ที่ดิน ธุรกิจ หรือทรัพย์สินหลายประเภท และอยากจัดสรรให้ทายาทอย่างราบรื่น</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container highlight">
+        <div class="highlight-grid">
+          <div>
+            <h2>มากกว่าประกันชีวิต คือเครื่องมือวางแผนมรดก</h2>
+            <p>
+              Heritage Plus ช่วยสร้างหลักประกันเป็นเงินก้อนให้ครอบครัว
+              โดยเลือกทุนประกันได้ตามเป้าหมาย เช่น 10 ล้าน, 20 ล้าน, 30 ล้าน, 50 ล้าน หรือ 100 ล้านบาท
+            </p>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>99 ปี</strong>
+              <span>ระยะเวลาคุ้มครอง</span>
+            </div>
+            <div class="stat">
+              <strong>10 ล้าน</strong>
+              <span>ทุนประกันขั้นต่ำ</span>
+            </div>
+            <div class="stat">
+              <strong>6 / 12 ปี</strong>
+              <span>ระยะเวลาชำระเบี้ย</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>ครบสัญญารับตามเงื่อนไข</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>ตัวอย่างเบี้ยประกันรายปี</h2>
+          <p>แบบ FWD Heritage Plus 99/12 ทุนประกัน 20 ล้านบาท อัตรามาตรฐาน</p>
+        </div>
+
+        <div class="premium-table">
+          <table>
+            <thead>
+              <tr>
+                <th>อายุ</th>
+                <th>ชาย</th>
+                <th>หญิง</th>
+                <th>ทุนประกัน</th>
+                <th>ระยะชำระเบี้ย</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>30 ปี</td>
+                <td>626,240 บาท/ปี</td>
+                <td>530,670 บาท/ปี</td>
+                <td>20,000,000</td>
+                <td>12 ปี</td>
+              </tr>
+              <tr>
+                <td>35 ปี</td>
+                <td>704,900 บาท/ปี</td>
+                <td>596,790 บาท/ปี</td>
+                <td>20,000,000</td>
+                <td>12 ปี</td>
+              </tr>
+              <tr>
+                <td>40 ปี</td>
+                <td>800,660 บาท/ปี</td>
+                <td>679,820 บาท/ปี</td>
+                <td>20,000,000</td>
+                <td>12 ปี</td>
+              </tr>
+              <tr>
+                <td>45 ปี</td>
+                <td>910,290 บาท/ปี</td>
+                <td>782,420 บาท/ปี</td>
+                <td>20,000,000</td>
+                <td>12 ปี</td>
+              </tr>
+              <tr>
+                <td>50 ปี</td>
+                <td>1,041,770 บาท/ปี</td>
+                <td>902,120 บาท/ปี</td>
+                <td>20,000,000</td>
+                <td>12 ปี</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="disclaimer">
+          หมายเหตุ: ตัวเลขเบี้ยเป็นตัวอย่างเบี้ยประกันรายปีแบบมาตรฐาน อาจเปลี่ยนแปลงตามอายุ เพศ สุขภาพ อาชีพ ทุนประกัน และเงื่อนไขการพิจารณารับประกันภัยของบริษัท
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" id="leadForm">
+      <div class="container form-wrap">
+
+        <div class="advisor">
+          <h3>ปรึกษากับเดือน</h3>
+          <p>ที่ปรึกษาประกันชีวิตและวางแผนมรดกกับ FWD</p>
+
+          <div class="advisor-list">
+            <div>👤 ตัวแทน: เดือน</div>
+            <div>🏆 ตำแหน่ง: UM ผู้จัดการหน่วย</div>
+            <div>🎖️ คุณวุฒิ: MDRT, TNQA</div>
+            <div>📞 โทร: 061-878-6269</div>
+            <div>💬 LINE: @748dwved</div>
+          </div>
+
+          <div class="cta-row">
+            <a href="tel:0618786269" class="btn btn-primary">โทรเลย</a>
+            <a href="https://line.me/R/ti/p/@748dwved" class="btn btn-line">แอด LINE</a>
+          </div>
+        </div>
+
+        <form class="lead-form" id="heritageForm">
+          <h2>ขอให้เดือนช่วยวางแผน Heritage Plus</h2>
+          <p>กรอกข้อมูลไว้ เดี๋ยวเดือนติดต่อกลับเพื่อช่วยคำนวณทุนและเบี้ยที่เหมาะกับเป้าหมายของคุณ</p>
+
+          <div class="form-grid">
+            <div class="field full">
+              <label>ชื่อ-นามสกุล</label>
+              <input type="text" name="name" placeholder="เช่น คุณสมชาย" required>
+            </div>
+
+            <div class="field">
+              <label>เบอร์โทร</label>
+              <input type="tel" name="phone" placeholder="08x-xxx-xxxx" required>
+            </div>
+
+            <div class="field">
+              <label>LINE ID</label>
+              <input type="text" name="line" placeholder="@line หรือ LINE ID">
+            </div>
+
+            <div class="field">
+              <label>อายุ</label>
+              <input type="number" name="age" min="1" max="75" placeholder="เช่น 40" required>
+            </div>
+
+            <div class="field">
+              <label>เพศ</label>
+              <select name="gender" required>
+                <option value="">เลือกเพศ</option>
+                <option value="ชาย">ชาย</option>
+                <option value="หญิง">หญิง</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>ทุนที่สนใจ</label>
+              <select name="sumInsured" required>
+                <option value="">เลือกทุนประกัน</option>
+                <option value="10 ล้านบาท">10 ล้านบาท</option>
+                <option value="20 ล้านบาท">20 ล้านบาท</option>
+                <option value="30 ล้านบาท">30 ล้านบาท</option>
+                <option value="50 ล้านบาท">50 ล้านบาท</option>
+                <option value="100 ล้านบาท">100 ล้านบาท</option>
+                <option value="ต้องการให้ช่วยประเมิน">ต้องการให้ช่วยประเมิน</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>งบต่อปี</label>
+              <select name="budget" required>
+                <option value="">เลือกงบประมาณ</option>
+                <option value="300,000 - 500,000 บาท/ปี">300,000 - 500,000 บาท/ปี</option>
+                <option value="500,000 - 800,000 บาท/ปี">500,000 - 800,000 บาท/ปี</option>
+                <option value="800,000 - 1,200,000 บาท/ปี">800,000 - 1,200,000 บาท/ปี</option>
+                <option value="1,200,000 บาทขึ้นไป/ปี">1,200,000 บาทขึ้นไป/ปี</option>
+                <option value="ยังไม่แน่ใจ">ยังไม่แน่ใจ</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>เวลาที่สะดวกให้ติดต่อกลับ</label>
+              <select name="contactTime" required>
+                <option value="">เลือกเวลา</option>
+                <option value="09:00 - 12:00">09:00 - 12:00</option>
+                <option value="12:00 - 15:00">12:00 - 15:00</option>
+                <option value="15:00 - 18:00">15:00 - 18:00</option>
+                <option value="18:00 - 21:00">18:00 - 21:00</option>
+                <option value="ติดต่อได้ทันที">ติดต่อได้ทันที</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label>หมายเหตุ</label>
+              <textarea name="customerNote" placeholder="เช่น อยากวางแผนให้ลูก / เจ้าของธุรกิจ / ต้องการทุน 20 ล้าน"></textarea>
+            </div>
+          </div>
+
+          <input type="hidden" name="plan" value="Heritage Plus">
+          <input type="hidden" name="sheet" value="heritage Plus">
+
+          <button class="btn btn-primary submit-btn" type="submit" id="submitBtn">
+            ส่งข้อมูลให้เดือนติดต่อกลับ
+          </button>
+
+          <div class="status" id="statusBox"></div>
+
+          <div class="disclaimer">
+            ข้อมูลนี้ใช้เพื่อให้ตัวแทนติดต่อกลับและนำเสนอแบบประกันตามความเหมาะสมเท่านั้น
+            ผู้ขอเอาประกันภัยควรศึกษาเงื่อนไข ความคุ้มครอง และข้อยกเว้นในกรมธรรม์ก่อนตัดสินใจทำประกันภัย
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating">
+    <a href="tel:0618786269" class="btn btn-dark">โทรหาเดือน</a>
+    <a href="https://line.me/R/ti/p/@748dwved" class="btn btn-line">แอด LINE</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      FWD Heritage Plus | ที่ปรึกษา: เดือน UM ผู้จัดการหน่วย | โทร 061-878-6269 | LINE @748dwved
+    </div>
+  </footer>
+
+  <script>
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxdGcLE0w3NKtMs4UVe3739jp7ghnin43JMMoZfsHIK2brD3Xu06oE9mTzFl5UrwaxXtg/exec";
+
+    const form = document.getElementById("heritageForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const statusBox = document.getElementById("statusBox");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "กำลังส่งข้อมูล...";
+      statusBox.className = "status";
+      statusBox.textContent = "";
+
+      const data = new FormData(form);
+
+      const name = data.get("name") || "";
+      const phone = data.get("phone") || "";
+      const line = data.get("line") || "";
+      const age = data.get("age") || "";
+      const gender = data.get("gender") || "";
+      const sumInsured = data.get("sumInsured") || "";
+      const budget = data.get("budget") || "";
+      const contactTime = data.get("contactTime") || "";
+      const customerNote = data.get("customerNote") || "";
+
+      const noteForLine =
+        "🎂 อายุ: " + age + "\\n" +
+        "🚻 เพศ: " + gender + "\\n" +
+        "💰 ทุนที่สนใจ: " + sumInsured + "\\n" +
+        "📌 งบต่อปี: " + budget + "\\n" +
+        "⏰ เวลาสะดวก: " + contactTime + "\\n" +
+        "📝 หมายเหตุ: " + customerNote;
+
+      const params = new URLSearchParams();
+
+      params.append("sheet", "heritage Plus");
+      params.append("plan", "Heritage Plus");
+      params.append("name", name);
+      params.append("phone", phone);
+      params.append("line", line);
+      params.append("age", age);
+      params.append("gender", gender);
+      params.append("sumInsured", sumInsured);
+      params.append("budget", budget);
+      params.append("time", contactTime);
+      params.append("date", new Date().toLocaleDateString("th-TH"));
+      params.append("note", noteForLine);
+      params.append("customerNote", customerNote);
+
+      try {
+        await fetch(WEB_APP_URL + "?" + params.toString(), {
+          method: "GET",
+          mode: "no-cors"
+        });
+
+        statusBox.className = "status ok";
+        statusBox.innerHTML = "✅ ส่งข้อมูลเรียบร้อยแล้ว เดี๋ยวเดือนติดต่อกลับโดยเร็วที่สุด";
+        form.reset();
+
+      } catch (error) {
+        statusBox.className = "status error";
+        statusBox.innerHTML = "❌ ส่งข้อมูลไม่สำเร็จ กรุณาลองใหม่ หรือโทรหาเดือนที่ 061-878-6269";
+      }
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "ส่งข้อมูลให้เดือนติดต่อกลับ";
+    });
+  </script>
+
+</body>
+</html>
