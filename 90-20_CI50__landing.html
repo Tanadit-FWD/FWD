@@ -1,4 +1,4 @@
-90-20_CI50__landing.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8" />
@@ -150,51 +150,57 @@ const ci={1000000:800000,2000000:1800000,3000000:2800000,5000000:4800000};
 function fmt(n){return Number(n).toLocaleString('th-TH')}
 function fillAge(){const age=document.getElementById('age');for(let i=20;i<=65;i++){const o=document.createElement('option');o.value=i;o.textContent=i+' ปี';if(i===30)o.selected=true;age.appendChild(o)}}
 function updateResult(){const g=document.getElementById('gender').value;const a=document.getElementById('age').value;const p=document.getElementById('plan').value;const prem=premiums[g][p][a];document.getElementById('resultPlan').textContent=fmt(p)+' บาท';document.getElementById('premium').textContent=fmt(prem)+' บาท';document.getElementById('monthly').textContent=fmt(Math.ceil(prem/12))+' บาท';document.getElementById('lifeText').textContent='ทุนหลัก 200,000 บาท';document.getElementById('ciText').textContent='CI 50 ทุน '+fmt(ci[p])+' บาท'}
-function sendLine(){
-const name=document.getElementById('name').value||'-';
-const gender=document.getElementById('gender').value==='male'?'ชาย':'หญิง';
-const age=document.getElementById('age').value;
-const plan=document.getElementById('plan').value;
-const contact=document.getElementById('contact').value||'-';
-const prem=premiums[document.getElementById('gender').value][plan][age];
+function sendLine() {
+  const name = document.getElementById("name").value || "-";
+  const gender = document.getElementById("gender").value === "male" ? "ชาย" : "หญิง";
+  const age = document.getElementById("age").value;
+  const plan = document.getElementById("plan").value;
+  const contact = document.getElementById("contact").value || "-";
+  const prem = premiums[document.getElementById("gender").value][plan][age];
 
-// ===== ส่งเข้า Google Sheet (Leads Line For Duan Only) =====
-const webhookUrl = "https://script.google.com/macros/s/AKfycbxdGcLE0w3NKtMs4UVe3739jp7ghnin43JMMoZfsHIK2brD3Xu06oE9mTzFl5UrwaxXtg/exec";
+  // ===== ส่งเข้า Google Sheet: Leads Line For Duan Only =====
+  const webhookUrl = "https://script.google.com/macros/s/AKfycbxdGcLE0w3NKtMs4UVe3739jp7ghnin43JMMoZfsHIK2brD3Xu06oE9mTzFl5UrwaxXtg/exec";
 
-const payload = {
-  name:name,
-  gender:gender,
-  age:age,
-  plan:fmt(plan),
-  premium:fmt(prem),
-  contact:contact,
-  source:"Landing Page มรดก FWD"
-};
+  const payload = {
+    name: name,
+    contact: contact,
+    gender: gender,
+    age: age,
+    plan: fmt(plan),
+    premium: fmt(prem),
+    source: "Landing มรดก FWD"
+  };
 
-fetch(webhookUrl, {
-  method:"POST",
-  headers:{
-    "Content-Type":"application/json"
-  },
-  body:JSON.stringify(payload)
-})
-.then(res=>res.json())
-.then(data=>{
-  console.log(data);
+  fetch(webhookUrl, {
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify(payload)
+  })
+  .then(() => {
+    const msg = `ขอเช็คเบี้ยแผนมรดก + CI 50
 
-  // หลังเก็บ lead เข้า sheet แล้ว เด้งไป LINE คุณเดือน
-  const msg=`ขอเช็คเบี้ยแผนมรดก + CI 50%0A%0Aชื่อ: ${encodeURIComponent(name)}%0Aเพศ: ${encodeURIComponent(gender)}%0Aอายุ: ${age}%0Aแพ็กเกจ: ${encodeURIComponent(fmt(plan))} บาท%0Aเบี้ยจากตาราง: ${encodeURIComponent(fmt(prem))} บาท/ปี%0Aติดต่อ: ${encodeURIComponent(contact)}`;
+ชื่อ: ${name}
+เพศ: ${gender}
+อายุ: ${age}
+แพ็กเกจ: ${fmt(plan)} บาท
+เบี้ยจากตาราง: ${fmt(prem)} บาท/ปี
+ติดต่อ: ${contact}`;
 
-  window.open(`https://line.me/R/oaMessage/@748dwved/?${msg}`,'_blank');
+    window.open(
+      `https://line.me/R/oaMessage/@748dwved/?${encodeURIComponent(msg)}`,
+      "_blank"
+    );
 
-  alert('บันทึก Lead เข้าชีต Leads Line For Duan Only เรียบร้อยแล้ว');
-})
-.catch(err=>{
-  console.error(err);
-  alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่');
-});
+    alert("ส่งข้อมูลเรียบร้อยแล้ว ✅");
+  })
+  .catch((err) => {
+    console.error(err);
+    alert("เกิดข้อผิดพลาด กรุณาลองใหม่");
+  });
 }
-fillAge();updateResult();
+
+fillAge();
+updateResult();
 </script>
 </body>
 </html>
