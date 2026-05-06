@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>แผนประกันมรดก + โรคร้ายแรง | FWD</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800;900&family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#ff6200;--orange2:#ff8a3d;--green:#0f6b55;--dark:#111;--cream:#fff7ef;--soft:#fff0e5;--white:#fff;--muted:#666;--line:#eee;--shadow:0 18px 50px rgba(0,0,0,.12);--radius:28px
+}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Sarabun,sans-serif;color:#111;background:#fff;line-height:1.65}h1,h2,h3,.btn,.brand{font-family:Prompt,sans-serif}a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid #eee}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:21px;font-weight:900;color:var(--orange)}.navlinks{display:flex;gap:18px;font-weight:800;font-size:14px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:14px 22px;font-weight:900;cursor:pointer;transition:.2s;white-space:nowrap}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--orange);color:#fff;box-shadow:0 10px 25px rgba(255,98,0,.25)}.btn-dark{background:#111;color:#fff}.btn-soft{background:var(--soft);color:var(--orange)}.hero{background:radial-gradient(circle at top right,#ffe2c9,#fff7ef 38%,#fff 78%);padding:70px 0 54px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}.eyebrow{display:inline-flex;background:#fff;color:var(--orange);border-radius:999px;padding:8px 14px;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,.08);margin-bottom:18px}.hero h1{font-size:clamp(34px,5vw,63px);line-height:1.08;font-weight:900;letter-spacing:-1px;margin-bottom:18px}.hero h1 span{color:var(--orange)}.lead{font-size:20px;color:#444;max-width:630px;margin-bottom:24px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.trust-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.06)}.trust-card b{font-family:Prompt;font-size:25px;color:var(--orange);display:block}.trust-card span{font-weight:800;color:#666;font-size:13px}.visual{background:#111;color:#fff;border-radius:34px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}.visual:after{content:"";position:absolute;right:-80px;bottom:-80px;width:240px;height:240px;background:rgba(255,98,0,.35);border-radius:50%}.money-card{position:relative;z-index:1;background:linear-gradient(145deg,#fff,#ffe6d4);color:#111;border-radius:28px;padding:30px;min-height:395px;display:flex;flex-direction:column;justify-content:space-between}.tag{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:8px 12px;font-weight:900;font-size:13px}.big{font-family:Prompt;font-size:45px;line-height:1.05;font-weight:900;color:var(--orange);margin:20px 0}.checks{display:grid;gap:10px;margin-top:15px}.check{display:flex;gap:10px;font-weight:800}.check:before{content:'✓';width:24px;height:24px;border-radius:50%;background:#13a56f;color:#fff;display:grid;place-items:center;flex:0 0 24px;font-size:13px}section{padding:72px 0}.section-head{text-align:center;max-width:820px;margin:0 auto 36px}.section-head h2{font-size:clamp(28px,4vw,44px);line-height:1.16;font-weight:900;margin-bottom:12px}.section-head p{font-size:18px;color:#666}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 8px 28px rgba(0,0,0,.05)}.card.featured{border:2px solid var(--orange);box-shadow:0 18px 50px rgba(255,98,0,.15);transform:translateY(-8px)}.badge{display:inline-block;background:var(--soft);color:var(--orange);border-radius:999px;padding:7px 12px;font-weight:900;font-size:13px;margin-bottom:10px}.card h3{font-size:24px;font-weight:900}.price{font-family:Prompt;font-size:32px;font-weight:900;color:var(--orange);margin:12px 0}.ul{display:grid;gap:10px;margin:16px 0}.li{display:flex;gap:10px;font-weight:700;color:#333}.li:before{content:'✓';width:21px;height:21px;border-radius:50%;background:#eafff5;color:#139466;display:grid;place-items:center;flex:0 0 21px;font-size:12px;font-weight:900}.dark-section{background:#111;color:#fff}.dark-section .section-head p{color:#ccc}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit{background:#fff;color:#111;border-radius:24px;padding:24px;box-shadow:var(--shadow)}.benefit .icon{font-size:34px;margin-bottom:8px}.benefit h3{font-size:23px;margin-bottom:8px}.calc{background:linear-gradient(135deg,#fff7ef,#fff)}.calc-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;align-items:start}.box{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:30px;padding:26px;box-shadow:var(--shadow)}label{display:block;font-weight:900;margin:14px 0 7px}select,input,textarea{width:100%;border:1px solid #ddd;border-radius:16px;padding:14px 16px;font:16px Sarabun;outline:none;background:#fff}select:focus,input:focus,textarea:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,98,0,.12)}.result-title{font-family:Prompt;font-size:27px;font-weight:900}.result-plan{font-family:Prompt;font-size:42px;line-height:1.1;color:var(--orange);font-weight:900;margin:14px 0}.premium{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.premium-card{background:#fff7ef;border:1px solid #ffd7bd;border-radius:20px;padding:16px}.premium-card span{display:block;font-weight:800;color:#777;font-size:13px}.premium-card b{font-family:Prompt;font-size:28px;color:#111}.note{font-size:13px;color:#777;margin-top:12px}.table-wrap{overflow-x:auto;background:#fff;border-radius:24px;padding:10px;box-shadow:var(--shadow)}table{width:100%;border-collapse:collapse;min-width:760px;color:#111}th,td{border-bottom:1px solid #eee;padding:15px;text-align:left;vertical-align:top}th{background:#fff1e6;font-family:Prompt}.faq{display:grid;gap:12px;max-width:900px;margin:auto}details{background:#fff;border:1px solid #eee;border-radius:20px;padding:18px 20px;box-shadow:0 6px 18px rgba(0,0,0,.04)}summary{font-family:Prompt;font-weight:900;font-size:18px;cursor:pointer}details p{color:#555;margin-top:10px}.final{background:linear-gradient(135deg,#111,#2a160b);color:#fff;text-align:center;padding:76px 0}.final h2{font-size:clamp(30px,4vw,48px);line-height:1.15;margin-bottom:12px}.final p{color:#e7e7e7;font-size:18px;margin-bottom:24px}.sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:100;background:#fff;border-top:1px solid #eee;padding:10px 14px;box-shadow:0 -8px 30px rgba(0,0,0,.13)}.sticky .btn{width:100%}footer{background:#fafafa;color:#777;font-size:13px;padding:24px 0}.disclaimer{background:#fafafa;border:1px solid #eee;border-radius:18px;padding:15px;color:#777;font-size:12px;margin-top:18px}@media(max-width:980px){.hero-grid,.calc-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.benefit-grid{grid-template-columns:1fr}.navlinks{display:none}.card.featured{transform:none}}@media(max-width:620px){body{padding-bottom:72px}.sticky{display:block}.cards,.trust,.premium{grid-template-columns:1fr}.hero{padding-top:45px}.visual{padding:15px}.money-card{min-height:auto}.big{font-size:38px}.nav .btn-soft{display:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <div class="brand">FWD มรดก + CI 50</div>
+    <nav class="navlinks"><a href="#plans">แพ็กเกจ</a><a href="#benefits">ความคุ้มครอง</a><a href="#calc">เช็คเบี้ย</a><a href="#faq">คำถาม</a></nav>
+    <a class="btn btn-primary" href="#calc">เช็คเบี้ย</a>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">แพ็กเกจขายดี: ตลอดชีพ 90/20 + CI 50</div>
+      <h1>แผนประกันมรดก <span>ดูแลทั้งคนข้างหลัง</span><br>และตัวคุณตอนป่วยหนัก</h1>
+      <p class="lead">เสียชีวิตมีเงินก้อนส่งต่อให้ครอบครัว ป่วยโรคร้ายแรงมีเงินก้อนให้ใช้รักษาและพักฟื้น จ่ายเบี้ย 20 ปี คุ้มครองชีวิตถึงอายุ 90 ปี</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#calc">เลือกอายุแล้วดูเบี้ยทันที</a>
+        <a class="btn btn-dark" href="https://line.me/R/ti/p/@748dwved" target="_blank">ทัก LINE ให้เดือนช่วยดู</a>
+      </div>
+      <div class="trust">
+        <div class="trust-card"><b>90/20</b><span>จ่าย 20 ปี คุ้มครองถึง 90 ปี</span></div>
+        <div class="trust-card"><b>CI 50</b><span>โรคร้ายแรง 50 โรค</span></div>
+        <div class="trust-card"><b>1-5 ล้าน</b><span>เลือกทุนมรดกตามเป้าหมาย</span></div>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="money-card">
+        <div>
+          <span class="tag">Best Seller Package</span>
+          <div class="big">ทุนมรดก<br>3,000,000 บาท</div>
+          <p>ตัวอย่างยอดนิยม: ทุนชีวิต 200,000 บาท + CI 50 ทุน 2,800,000 บาท รวมความคุ้มครอง 3 ล้านบาท</p>
+        </div>
+        <div class="checks">
+          <div class="check">เสียชีวิต ครอบครัวรับเงินก้อน</div>
+          <div class="check">ป่วยโรคร้ายแรง รับเงินก้อนตามทุน CI</div>
+          <div class="check">เหมาะกับคนมีบ้าน ลูก หนี้ หรือธุรกิจ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plans">
+  <div class="container">
+    <div class="section-head"><h2>เลือกแพ็กเกจตามเงินก้อนที่อยากส่งต่อ</h2><p>ทุกแพ็กเกจตั้งต้นด้วยทุนหลัก 200,000 บาท แล้วเพิ่ม CI 50 เพื่อให้ความคุ้มครองรวมเป็น 1 / 2 / 3 / 5 ล้านบาท</p></div>
+    <div class="cards">
+      <div class="card"><span class="badge">เริ่มต้น</span><h3>แพ็ก 1 ล้าน</h3><div class="price">1,000,000</div><div class="ul"><div class="li">ทุนหลัก 200,000</div><div class="li">CI 50 ทุน 800,000</div><div class="li">เหมาะกับเริ่มวางแผนมรดก</div></div><a class="btn btn-soft" href="#calc">เช็คเบี้ย</a></div>
+      <div class="card"><span class="badge">ครอบครัวเล็ก</span><h3>แพ็ก 2 ล้าน</h3><div class="price">2,000,000</div><div class="ul"><div class="li">ทุนหลัก 200,000</div><div class="li">CI 50 ทุน 1,800,000</div><div class="li">เหมาะกับคนมีภาระบ้าน/ลูก</div></div><a class="btn btn-soft" href="#calc">เช็คเบี้ย</a></div>
+      <div class="card featured"><span class="badge">ขายดีที่สุด</span><h3>แพ็ก 3 ล้าน</h3><div class="price">3,000,000</div><div class="ul"><div class="li">ทุนหลัก 200,000</div><div class="li">CI 50 ทุน 2,800,000</div><div class="li">วงเงินดูคุ้ม เบี้ยยังจับต้องได้</div></div><a class="btn btn-primary" href="#calc">เช็คเบี้ย</a></div>
+      <div class="card"><span class="badge">จัดเต็ม</span><h3>แพ็ก 5 ล้าน</h3><div class="price">5,000,000</div><div class="ul"><div class="li">ทุนหลัก 200,000</div><div class="li">CI 50 ทุน 4,800,000</div><div class="li">เหมาะกับเจ้าของกิจการ/รายได้สูง</div></div><a class="btn btn-soft" href="#calc">เช็คเบี้ย</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="benefits" class="dark-section">
+  <div class="container">
+    <div class="section-head"><h2>ความคุ้มครองของแพ็กเกจนี้</h2><p>เล่าแบบที่ลูกค้าเข้าใจง่าย: จ่ายแล้วได้อะไร และช่วยครอบครัวยังไง</p></div>
+    <div class="benefit-grid">
+      <div class="benefit"><div class="icon">👨‍👩‍👧</div><h3>เสียชีวิต</h3><p>ครอบครัวได้รับเงินก้อนตามแพ็กเกจที่เลือก เช่น 1 / 2 / 3 / 5 ล้านบาท เพื่อใช้ปิดหนี้ ดูแลบ้าน ค่าเรียนลูก หรือเป็นเงินตั้งหลัก</p></div>
+      <div class="benefit"><div class="icon">🛡️</div><h3>โรคร้ายแรง 50 โรค</h3><p>เมื่อเข้าเงื่อนไขโรคร้ายแรงตามกรมธรรม์ รับเงินก้อนจาก CI 50 เพื่อนำไปใช้รักษา พักงาน จ้างคนดูแล หรือจ่ายค่าใช้จ่ายครอบครัว</p></div>
+      <div class="benefit"><div class="icon">⏳</div><h3>จ่าย 20 ปี คุ้มครองถึง 90 ปี</h3><p>ทุนหลักเป็นตลอดชีพ 90/20 จ่ายเบี้ย 20 ปี แต่ให้ความคุ้มครองชีวิตยาวถึงอายุ 90 ปี เหมาะกับการวางแผนมรดกระยะยาว</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="calc" class="calc">
+  <div class="container calc-grid">
+    <div class="box">
+      <div class="section-head" style="text-align:left;margin:0 0 12px"><h2>คำนวณเบี้ยจากตารางที่ส่งมา</h2><p>เลือกเพศ อายุ และแพ็กเกจ ระบบจะแสดงเบี้ยรวมรายปี</p></div>
+      <label>ชื่อ</label><input id="name" placeholder="เช่น คุณสมชาย">
+      <label>เพศ</label><select id="gender" onchange="updateResult()"><option value="male">ชาย</option><option value="female">หญิง</option></select>
+      <label>อายุ</label><select id="age" onchange="updateResult()"></select>
+      <label>แพ็กเกจ</label><select id="plan" onchange="updateResult()"><option value="1000000">มรดก 1,000,000 บาท</option><option value="2000000">มรดก 2,000,000 บาท</option><option value="3000000" selected>มรดก 3,000,000 บาท</option><option value="5000000">มรดก 5,000,000 บาท</option></select>
+      <label>เบอร์โทร / LINE ID</label><input id="contact" placeholder="เช่น 061-878-6269 หรือ LINE ID">
+      <button class="btn btn-primary" style="width:100%;margin-top:18px" onclick="sendLine()">ส่งให้เดือนช่วยเช็ค/ปิดใบเสนอราคา</button>
+      <p class="note">*ตัวเลขนี้อ้างอิงจากตารางภาพที่ให้มา ใช้เพื่อคัดกรองเบื้องต้น ก่อนออกใบเสนอราคาจริงจากระบบบริษัท</p>
+    </div>
+    <div class="box">
+      <div class="result-title">ผลลัพธ์แพ็กเกจที่เลือก</div>
+      <div class="result-plan" id="resultPlan">3,000,000 บาท</div>
+      <div class="premium">
+        <div class="premium-card"><span>เบี้ยรวมรายปี</span><b id="premium">-</b></div>
+        <div class="premium-card"><span>เฉลี่ยต่อเดือน</span><b id="monthly">-</b></div>
+      </div>
+      <div class="ul">
+        <div class="li" id="lifeText">ทุนหลัก 200,000 บาท</div>
+        <div class="li" id="ciText">CI 50 ทุน 2,800,000 บาท</div>
+        <div class="li">จ่ายเบี้ย 20 ปี คุ้มครองชีวิตถึงอายุ 90 ปี</div>
+        <div class="li">เหมาะกับการวางแผนมรดก + กันความเสี่ยงโรคร้ายแรง</div>
+      </div>
+      <div class="disclaimer">ประโยคปิดการขายแนะนำ: “ถ้าวันนี้เกิดเหตุไม่คาดคิด ครอบครัวจะได้มีเงินก้อนทันที และถ้ายังไม่เสียชีวิตแต่ป่วยหนัก คุณก็ยังมีเงินก้อนมารักษาตัวเองครับ/ค่ะ”</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head"><h2>ตัวอย่างเบี้ยขายง่าย</h2><p>ตัวอย่างจากตาราง เพื่อเอาไปใช้ใน Ads หรือหน้าแรก</p></div>
+    <div class="table-wrap"><table><thead><tr><th>ตัวอย่าง</th><th>เพศชาย 30 ปี</th><th>เพศหญิง 30 ปี</th><th>จุดขาย</th></tr></thead><tbody><tr><td>แพ็ก 1 ล้าน</td><td>6,724/ปี</td><td>5,360/ปี</td><td>เริ่มต้นง่าย เบี้ยเบา</td></tr><tr><td>แพ็ก 2 ล้าน</td><td>9,204/ปี</td><td>7,210/ปี</td><td>เหมาะกับครอบครัวเริ่มมีภาระ</td></tr><tr><td><strong>แพ็ก 3 ล้าน</strong></td><td><strong>11,684/ปี</strong></td><td><strong>9,060/ปี</strong></td><td><strong>ขายดีที่สุด วงเงินดูคุ้ม</strong></td></tr><tr><td>แพ็ก 5 ล้าน</td><td>16,644/ปี</td><td>12,760/ปี</td><td>เหมาะกับรายได้สูง/เจ้าของกิจการ</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head"><h2>คำถามที่ลูกค้ามักถาม</h2></div>
+    <div class="faq">
+      <details open><summary>แผนนี้เป็นประกันมรดกอย่างเดียวไหม?</summary><p>ไม่ใช่แค่ประกันมรดก แต่เป็นแพ็กเกจที่รวมทุนชีวิตกับโรคร้ายแรง 50 โรค จึงช่วยได้ทั้งกรณีเสียชีวิตและกรณีป่วยหนัก</p></details>
+      <details><summary>ทำไมทุนหลักมี 200,000 แต่บอกว่าคุ้มครอง 3 ล้าน?</summary><p>เพราะเป็นแพ็กเกจรวม ทุนหลัก 200,000 บาท และเพิ่มสัญญาโรคร้ายแรง CI 50 อีก 2,800,000 บาท รวมเป็นวงเงินแพ็กเกจ 3,000,000 บาทตามตาราง</p></details>
+      <details><summary>โรคร้ายแรงควรขายยังไงให้เข้าใจง่าย?</summary><p>ให้ยกตัวอย่างโรคที่ลูกค้ารู้จัก เช่น มะเร็ง หัวใจ เส้นเลือดสมอง ไตวาย อัมพฤกษ์/อัมพาต แล้วบอกว่า “รับเป็นเงินก้อน” ไม่ใช่รอเบิกตามบิลค่ารักษา</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container"><h2>อย่ารอให้ครอบครัวต้องหาเงินก้อนในวันที่สายไป</h2><p>กรอกอายุและเพศ แล้วให้เดือนช่วยเลือกทุนที่เหมาะกับงบของคุณ</p><a class="btn btn-primary" href="#calc">เช็คเบี้ยตอนนี้</a> <a class="btn btn-soft" href="https://line.me/R/ti/p/@748dwved" target="_blank">ทัก LINE @748dwved</a></div>
+</section>
+</main>
+<div class="sticky"><a class="btn btn-primary" href="#calc">เช็คเบี้ยแผนมรดก</a></div>
+<footer><div class="container"><p><b>ตัวแทน:</b> เดือน | โทร 061-878-6269 | LINE: @748dwved</p><p>ผู้ซื้อควรทำความเข้าใจรายละเอียดความคุ้มครอง เงื่อนไข ข้อยกเว้น และผลประโยชน์ตามกรมธรรม์ก่อนตัดสินใจทำประกันภัย</p></div></footer>
+<script>
+const premiums={
+ male:{
+  1000000:{20:5244,21:5412,22:5536,23:5696,24:5744,25:5892,26:6036,27:6200,28:6376,29:6532,30:6724,31:6920,32:7168,33:7428,34:7740,35:8048,36:8516,37:8860,38:9192,39:9568,40:9984,41:10472,42:11036,43:11656,44:12316,45:12932,46:13696,47:14436,48:15176,49:15948,50:16768,51:17452,52:18484,53:19520,54:20872,55:22132,56:23884,57:25804,58:27720,59:29584,60:32072,61:35136,62:38304,63:41672,64:45516,65:51100},
+  2000000:{20:7124,21:7352,22:7506,23:7716,24:7824,25:8032,26:8206,27:8450,28:8696,29:8922,30:9204,31:9520,32:9928,33:10388,34:10940,35:11508,36:12286,37:12910,38:13532,39:14228,40:14964,41:15862,42:16856,43:17976,44:16568,45:20422,46:21866,47:23256,48:24646,49:26108,50:27678,51:28942,52:30864,53:32920,54:35412,55:37972,56:41364,57:45134,58:49020,59:52814,60:57862,61:64206,62:70634,63:77662,64:85636,65:97500},
+  3000000:{20:9004,21:9292,22:9476,23:9736,24:9904,25:10172,26:10376,27:10700,28:11016,29:11312,30:11684,31:12120,32:12688,33:13348,34:14968,35:14968,36:16056,37:16960,38:17872,39:18888,40:19944,41:21252,42:22676,43:24296,44:26056,45:27912,46:30036,47:32076,48:34116,49:36268,50:38588,51:40432,52:43244,53:46320,54:49952,55:53812,56:58844,57:64464,58:70320,59:76044,60:83652,61:93276,62:102964,63:113652,64:125756,65:143900},
+  5000000:{20:12764,21:13172,22:13416,23:13776,24:14064,25:14452,26:14716,27:15200,28:15656,29:16092,30:16644,31:17320,32:18208,33:16124,34:20540,35:21888,36:23596,37:25060,38:26552,39:28208,40:29904,41:32032,42:34316,43:36936,44:39796,45:42892,46:46376,47:49716,48:53056,49:56588,50:60408,51:63412,52:68004,53:73120,54:79032,55:85492,56:93804,57:103124,58:112920,59:122504,60:135232,61:151416,62:167624,63:185632,64:205996,65:236700}
+ },
+ female:{
+  1000000:{20:3844,21:3924,22:4036,23:4156,24:4292,25:4484,26:4620,27:4768,28:4956,29:5136,30:5360,31:5588,32:5896,33:6204,34:6584,35:6940,36:7380,37:7768,38:8132,39:8488,40:8864,41:9180,42:9580,43:10104,44:10608,45:11152,46:11760,47:12404,48:12992,49:13628,50:14204,51:14812,52:15384,53:15800,54:16368,55:16936,56:17780,57:18796,58:19816,59:21000,60:22580,61:24476,62:26596,63:28464,64:30544,65:34152},
+  2000000:{20:4924,21:5004,22:5156,23:5326,24:5532,25:5814,26:6020,27:6278,28:6576,29:6856,30:7210,31:7598,32:8116,33:8684,34:9364,35:10040,36:10830,37:11528,38:12172,39:12798,40:13444,41:13980,42:14730,43:15634,44:16568,45:17592,46:18760,47:19934,48:21032,49:22188,50:23234,51:24352,52:25264,53:25950,54:26778,55:27656,56:29130,57:31016,58:32886,59:35150,60:38280,61:42146,62:46366,63:50144,64:54274,65:61842},
+  3000000:{20:6004,21:6084,22:6276,23:6496,24:6772,25:7144,26:7420,27:7788,28:8196,29:8576,30:9060,31:9608,32:10336,33:11164,34:12144,35:13140,36:14280,37:15288,38:16212,39:17108,40:18024,41:18780,42:19880,43:21164,44:22528,45:24032,46:25760,47:27464,48:29072,49:30748,50:32264,51:33892,52:33892,53:35144,54:37188,55:38376,56:40480,57:43236,58:45956,59:49300,60:53980,61:59816,62:66136,63:71824,64:71824,65:89564},
+  5000000:{20:8164,21:8244,22:8516,23:8836,24:9252,25:9804,26:10220,27:10808,28:11436,29:12016,30:12760,31:13628,32:14776,33:16124,34:17704,35:19340,36:21180,37:22808,38:24292,39:25728,40:27184,41:28380,42:30180,43:32224,44:34448,45:36912,46:39760,47:42524,48:45152,49:47868,50:50324,51:52972,52:54904,53:56400,54:58008,55:59816,56:63180,57:67676,58:72096,59:77600,60:85380,61:95156,62:105676,63:115184,64:125464,65:144912}
+ }
+};
+const ci={1000000:800000,2000000:1800000,3000000:2800000,5000000:4800000};
+function fmt(n){return Number(n).toLocaleString('th-TH')}
+function fillAge(){const age=document.getElementById('age');for(let i=20;i<=65;i++){const o=document.createElement('option');o.value=i;o.textContent=i+' ปี';if(i===30)o.selected=true;age.appendChild(o)}}
+function updateResult(){const g=document.getElementById('gender').value;const a=document.getElementById('age').value;const p=document.getElementById('plan').value;const prem=premiums[g][p][a];document.getElementById('resultPlan').textContent=fmt(p)+' บาท';document.getElementById('premium').textContent=fmt(prem)+' บาท';document.getElementById('monthly').textContent=fmt(Math.ceil(prem/12))+' บาท';document.getElementById('lifeText').textContent='ทุนหลัก 200,000 บาท';document.getElementById('ciText').textContent='CI 50 ทุน '+fmt(ci[p])+' บาท'}
+function sendLine(){
+const name=document.getElementById('name').value||'-';
+const gender=document.getElementById('gender').value==='male'?'ชาย':'หญิง';
+const age=document.getElementById('age').value;
+const plan=document.getElementById('plan').value;
+const contact=document.getElementById('contact').value||'-';
+const prem=premiums[document.getElementById('gender').value][plan][age];
+
+// ===== ส่งเข้า Google Sheet (Leads Line For Duan Only) =====
+const webhookUrl = "https://script.google.com/macros/s/AKfycbzRto-1A0SnQ-9Mm83HHLDVrBjJ9MNYDyHSRabF4z9NMQ4Npk7hpqDk6rbQo8Ya6uEAPg/exec";
+
+const payload = {
+  name:name,
+  gender:gender,
+  age:age,
+  plan:fmt(plan),
+  premium:fmt(prem),
+  contact:contact,
+  source:"Landing Page มรดก FWD"
+};
+
+fetch(webhookUrl, {
+  method:"POST",
+  headers:{
+    "Content-Type":"application/json"
+  },
+  body:JSON.stringify(payload)
+})
+.then(res=>res.json())
+.then(data=>{
+  console.log(data);
+
+  // หลังเก็บ lead เข้า sheet แล้ว เด้งไป LINE คุณเดือน
+  const msg=`ขอเช็คเบี้ยแผนมรดก + CI 50%0A%0Aชื่อ: ${encodeURIComponent(name)}%0Aเพศ: ${encodeURIComponent(gender)}%0Aอายุ: ${age}%0Aแพ็กเกจ: ${encodeURIComponent(fmt(plan))} บาท%0Aเบี้ยจากตาราง: ${encodeURIComponent(fmt(prem))} บาท/ปี%0Aติดต่อ: ${encodeURIComponent(contact)}`;
+
+  window.open(`https://line.me/R/oaMessage/@748dwved/?${msg}`,'_blank');
+
+  alert('บันทึก Lead เข้าชีต Leads Line For Duan Only เรียบร้อยแล้ว');
+})
+.catch(err=>{
+  console.error(err);
+  alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่');
+});
+}
+fillAge();updateResult();
+</script>
+</body>
+</html>
