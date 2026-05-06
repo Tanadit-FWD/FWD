@@ -910,14 +910,6 @@
       const contactTime = data.get("contactTime") || "";
       const customerNote = data.get("customerNote") || "";
 
-      const noteForLine =
-        "🎂 อายุ: " + age + "\\n" +
-        "🚻 เพศ: " + gender + "\\n" +
-        "💰 ทุนที่สนใจ: " + sumInsured + "\\n" +
-        "📌 งบต่อปี: " + budget + "\\n" +
-        "⏰ เวลาสะดวก: " + contactTime + "\\n" +
-        "📝 หมายเหตุ: " + customerNote;
-
       const params = new URLSearchParams();
 
       params.append("sheet", "heritage Plus");
@@ -931,7 +923,7 @@
       params.append("budget", budget);
       params.append("time", contactTime);
       params.append("date", new Date().toLocaleDateString("th-TH"));
-      params.append("note", noteForLine);
+      params.append("note", customerNote);
       params.append("customerNote", customerNote);
 
       try {
