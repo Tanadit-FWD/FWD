@@ -158,9 +158,11 @@ function sendLine() {
   const contact = document.getElementById("contact").value || "-";
   const prem = premiums[document.getElementById("gender").value][plan][age];
 
-  const webhookUrl = "https://script.google.com/macros/s/AKfycbzRto-1A0SnQ-9Mm83HHLDVrBjJ9MNYDyHSRabF4z9NMQ4Npk7hpqDk6rbQo8Ya6uEAPg/exec";
+  const webhookUrl = "https://script.google.com/macros/s/AKfycbw0JVw0a2UNOplTQ_pSd2bi8nsHAtCaajymiqvtWCbonqqojNp8FZVjTF-KZZltw8KLNg/exec";
 
   const payload = {
+leadToken: "FWD_LEAD_2026_SECURE",
+product: "90/20 + CI50",
     name: name,
     phone: contact,
     contact: contact,

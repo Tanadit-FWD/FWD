@@ -884,7 +884,7 @@
   </footer>
 
   <script>
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxdGcLE0w3NKtMs4UVe3739jp7ghnin43JMMoZfsHIK2brD3Xu06oE9mTzFl5UrwaxXtg/exec";
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw0JVw0a2UNOplTQ_pSd2bi8nsHAtCaajymiqvtWCbonqqojNp8FZVjTF-KZZltw8KLNg/exec";
 
     const form = document.getElementById("heritageForm");
     const submitBtn = document.getElementById("submitBtn");
@@ -914,6 +914,10 @@
 
       params.append("sheet", "heritage Plus");
       params.append("plan", "Heritage Plus");
+	params.append("leadToken", "FWD_LEAD_2026_SECURE");
+	params.append("product", "Heritage Plus");
+	params.append("source", "Landing Heritage Plus");
+	params.append("pageUrl", window.location.href);
       params.append("name", name);
       params.append("phone", phone);
       params.append("line", line);
@@ -925,6 +929,7 @@
       params.append("date", new Date().toLocaleDateString("th-TH"));
       params.append("note", customerNote);
       params.append("customerNote", customerNote);
+
 
       try {
         await fetch(WEB_APP_URL + "?" + params.toString(), {

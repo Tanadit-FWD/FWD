@@ -219,7 +219,7 @@
 
   <script>
     const CONFIG = {
-      GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzRto-1A0SnQ-9Mm83HHLDVrBjJ9MNYDyHSRabF4z9NMQ4Npk7hpqDk6rbQo8Ya6uEAPg/exec", // ขั้นตอนที่ 3: เอา Web App URL จาก Google Apps Script มาใส่ตรงนี้
+      GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbw0JVw0a2UNOplTQ_pSd2bi8nsHAtCaajymiqvtWCbonqqojNp8FZVjTF-KZZltw8KLNg/exec", // ขั้นตอนที่ 3: เอา Web App URL จาก Google Apps Script มาใส่ตรงนี้
       LINE_ID: "@748dwved",
       AGENT_NAME: "เดือน",
       PRODUCT_NAME: "Precious Care Protection"
@@ -256,6 +256,8 @@
       data.phone = phone;
       data.createdAt = new Date().toLocaleString('th-TH');
       data.source = 'Landing Precious Care';
+	data.leadToken = "FWD_LEAD_2026_SECURE";
+	data.product = "Precious Care Protection";
       data.pageUrl = window.location.href;
       Object.assign(data, getUTM());
 
